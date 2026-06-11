@@ -24,6 +24,14 @@ class BowlingGameTest {
     }
 
     @Test
+    @DisplayName("퍼펙트 게임은 300점이다")
+    void perfectGameScoresThreeHundred() {
+        rollMany(12, 10);
+
+        assertEquals(300, game.score());
+    }
+
+    @Test
     @DisplayName("스페어 후 다음 투구가 보너스로 더해진다")
     void spareFollowedByThreeScoresSixteen() {
         game.roll(5); game.roll(5); // 스페어
