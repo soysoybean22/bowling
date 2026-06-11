@@ -24,6 +24,14 @@ class BowlingGameTest {
     }
 
     @Test
+    @DisplayName("매 투구 1핀씩 쓰러뜨리면 20점이다")
+    void allOnesScoresTwenty() {
+        rollMany(20, 1);
+
+        assertEquals(20, game.score());
+    }
+
+    @Test
     @DisplayName("스트라이크 후 다음 두 투구가 보너스로 더해진다")
     void strikeFollowedByThreeAndFourScoresTwentyFour() {
         game.roll(10);           // 스트라이크
